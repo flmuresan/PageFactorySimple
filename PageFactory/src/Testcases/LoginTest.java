@@ -5,7 +5,7 @@ import org.openqa.selenium.chrome.ChromeDriver;
 import org.testng.annotations.Test;
 
 import objectrepository.OcxHomePagePageFactory;
-import objectrepository.OcxLoginPage;
+import objectrepository.OcxLoginPagePageFactory;
 
 public class LoginTest {
 	
@@ -19,11 +19,11 @@ public class LoginTest {
 		//if you want to access any method from other class, you have to create an object of this class into your test case
 		//driver has all the information on how to execute the test case in chrome browser 
 		//if you want to pass the driver as an argument, in the same time,you have to have a constructor with a single argument (constructor can be found in OcxLoginPage)
-		OcxLoginPage ocx = new OcxLoginPage(driver);
+		OcxLoginPagePageFactory ocx = new OcxLoginPagePageFactory(driver);
 		
 		ocx.username().sendKeys("hello");
 		ocx.password().sendKeys("parola1");
-		ocx.btnLogIn().click();
+		ocx.btnLogin().click();
 		ocx.btnHome().click();
 		
 		// we create the object for the home page so we can use the home page, where we also have the constructor
